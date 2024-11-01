@@ -6,3 +6,4 @@ rsconnect::setAccountInfo(name='phacochr',
                           secret='flZSH863SQkPv0qq1Qj5sVH4FfdjcWTXHiMXKNGc')
 
 rsconnect::deployApp('C:/Users/hugop/Nextcloud/git/phacochrdev_data')
+#rsconnect::deployApp('/home/user/github/phacochr_data')
