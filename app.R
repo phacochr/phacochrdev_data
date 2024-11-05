@@ -177,7 +177,7 @@ server <- function(input, output, session) {
   output$head_data_geocoded <- renderTable({ head(result()$data_geocoded) })
 
   output$downloadData <- downloadHandler(
-    filename = function() { paste0(input$file1$name, "_phacochr", input$fileType_output) },
+    filename = function() { paste0(str_remove(input$file1$name,"\\.[^\\.]*$"), "_phacochr", input$fileType_output) },
     content = function(file) {
       if (input$fileType_output == ".csv") {
         write.csv(result()$data_geocoded, file, row.names = FALSE)
@@ -197,3 +197,5 @@ server <- function(input, output, session) {
 
 # Create Shiny app ----
 shinyApp(ui, server)
+
+
